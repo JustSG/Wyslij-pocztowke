@@ -1,0 +1,56 @@
+﻿<Window x:Class="Pocztowka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pocztowka"
+        mc:Ignorable="d"
+        Title="Nadaj Przesyłkę, PESEL: 00000000000" Height="450" Width="800">
+    <StackPanel>
+        <UniformGrid Columns="2">
+            <StackPanel>
+                <GroupBox Header="Rodzaj przesyłki" Width="300" Margin="10">
+                    <StackPanel>
+                        <RadioButton
+                    GroupName="cos_radio"
+                    x:Name="pocztowka_radio"
+                    IsChecked="True"
+                    Margin="5">
+                            Pocztówka
+                        </RadioButton>
+                        <RadioButton
+                    GroupName="cos_radio"
+                    x:Name="list_radio"
+                    Margin="5">
+                            List
+                        </RadioButton>
+                        <RadioButton
+                    GroupName="cos_radio"
+                    x:Name="paczka_radio"
+                    Margin="5">
+                            Paczka
+                        </RadioButton>
+                    </StackPanel>
+                </GroupBox>
+                <Button Click="Button_Click" Width="300" Height="20">Sprawdź Cenę</Button>
+                <UniformGrid Columns="2" Width="300">
+                    <Image Source="pocztowka.png" x:Name="image" Height="86" Width="144" Margin="10"></Image>
+                    <TextBlock FontWeight="Bold" FontSize="25" TextAlignment="Center" x:Name="cena_textblock">Cena: 1zł</TextBlock>
+                </UniformGrid>
+            </StackPanel>
+            <DockPanel>
+                <GroupBox Header="Dane adresowe" Width="300" Margin="10">
+                    <StackPanel>
+                        <TextBlock Margin="5">Ulica z numerem</TextBlock>
+                        <TextBox x:Name="ulica_textbox" Margin="5"></TextBox>
+                        <TextBlock Margin="5">Kod pocztowy</TextBlock>
+                        <TextBox x:Name="kodP_textbox" Margin="5" ></TextBox>
+                        <TextBlock Margin="5">Miasto</TextBlock>
+                        <TextBox x:Name="miasto_textbox" Margin="5"></TextBox>
+                    </StackPanel>
+                </GroupBox>
+            </DockPanel>
+        </UniformGrid>
+        <Button Margin="15" Width="700" Click="Button_Click_1">Zatwierdź</Button>
+    </StackPanel>
+</Window>
